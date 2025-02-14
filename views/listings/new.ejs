@@ -6,7 +6,7 @@
     <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
-        <input name="listing[title]" placeholder="Add a catchy title"class="form-control" type="text" required />
+        <input name="listing[title]" placeholder="Add a catchy title"class="form-control" type="text" required autocomplete="off"/>
         <div class="valid-feedback">
           Looks good!
         </div>
@@ -35,7 +35,7 @@
           <label for="price" class="form-label">Price</label>
           <input name="listing[price]" placeholder="2000"
           required
-          class="form-control" />
+          class="form-control"  autocomplete="off"/>
           <div class="invalid-feedback">
             Please enter a valid Price.
           </div>
@@ -43,8 +43,8 @@
   
         <div class="mb-3 col-md-4">
           <label for="country" class="form-label">Country</label>
-          <input name="listing[country]" placeholder="India"
-          required
+          <input name="listing[country]" placeholder="Enter Country Name" autocomplete="off"
+          required 
           class="form-control" type="text" />
           <div class="invalid-feedback">
             Please enter a valid Country.
@@ -54,7 +54,7 @@
         <div class="mb-3 col-md-4">
           <label for="category" class="form-label">Category</label>
           <input name="listing[category]" placeholder="Room"
-          required
+          required autocomplete="off"
           class="form-control" type="text" />
           <div class="invalid-feedback">
             Please enter a valid Category.
@@ -71,7 +71,7 @@
         placeholder="Uttar Pradesh, Mirzapur"
         required
         type="text"
-        class="form-control"/>
+        class="form-control" autocomplete="off"/>
         <div class="invalid-feedback">
           Please enter a valid state & District.
         </div>

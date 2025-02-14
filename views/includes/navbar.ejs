@@ -22,7 +22,13 @@
 
 <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+      
+      <a class="navbar-brand" href="/listings">
+        <div class="rotate">
+          <i class="fa-regular fa-compass "></i>
+        </div>
+      </a>
+    
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -39,13 +45,18 @@
           </form>
         </div>
 
+        
 
         <div class="navbar-nav ms-auto">
+          
           <a class="nav-link" href="/listings/new"><b>Airbnb your home</b></a>
+
+          <a href="/bookings" class="btn btn-primary mx-3">Your Bookings</a>
+
           <% if(!currentUser){ %>
 
             <div class="d-grid gap-2 d-md-flex justify-content-md-end ms-auto">
-              <a href="/signup"><button class="btn btn-outline-success" type="button">Sign Up</button></a>
+              <!-- <a href="/signup"><button class="btn btn-outline-success" type="button">Sign Up</button></a> -->
               <a href="/login"><button class="btn btn-outline-success" type="button">Log In</button></a>  
             </div>
           <% } %>

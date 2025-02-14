@@ -11,11 +11,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+
+        <a class="navbar-brand" href="/listings">
+          <div class="rotate">
+            <i class="fa-regular fa-compass "></i>
+          </div>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,187 +30,289 @@
               <a class="nav-link" href="/listings">Explore</a>
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end ms-auto">
-              <a class="nav-link" href="/listings/new"><b>Airbnb your home</b></a>
-              <a href="/signup"><button class="btn btn-outline-success" type="button">Sign Up</button></a>
+              <a class="nav-link" href="/listings/new"><b>Rent your home</b></a>
+              <!-- <a href="/signup"><button class="btn btn-outline-success" type="button">Sign Up</button></a> -->
               <a href="/login"><button class="btn btn-outline-success" type="button">Log In</button></a>  
             </div>
           </div>
         </div>
       </div>
     </nav>
-    <div class="card bg-dark text-white default-image">
+   
+   
+    <!-- <div class="card bg-dark text-white default-image">
       <img src="https://images.unsplash.com/photo-1614846384571-1e31322ed3a9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img" alt="...">
-    </div>
-    <h2 class="mt-3 col-4 offset-1"> Offers</h2>
+    </div> -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100 img-height" src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aG90ZWx8ZW58MHx8MHx8fDA%3D" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 img-height" src="/img/image4.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 img-height" src="/img/img2.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+
+
+    <!-- <h2 class="mt-3 col-4 offset-1"> Offers</h2>
     <p class="col-4 offset-1">Promotions, deals and special offers for you</p>
 
     <div class="row col-10 offset-1">
       <div class="mb-3 col-5 offset-1 mt-3">
         <img src="https://images.unsplash.com/photo-1585484172678-879ab0efb064?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
+       
       </div>
       <div class="mb-3 col-5 offset-1 mt-3">
         <img src="https://images.unsplash.com/photo-1671512226229-e05294dd1970?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-bottom" alt="...">
-        <div class="card-body">
-          <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
+        
       </div>
-    </div>
+    </div> -->
 
     <h2 class="mt-3 col-4 offset-1">Browse by property type</h2>
     <div class="row col-10 offset-1">
       <div class="row row-cols-1 row-cols-md-3 g-2">
+        <a href="/listings">
         <div class="col">
           <div class="h-100">
             <img src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
+           
           </div>
         </div>
+      </a>
+        <a href="/listings">
         <div class="col">
           <div class="h-100">
             <img src="https://images.unsplash.com/photo-1594159667349-2b4b2b911824?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
           </div>
         </div>
+      </a>
+        <a href="/listings">
         <div class="col">
           <div class="h-100">
             <img src="https://images.unsplash.com/photo-1635111300299-e6e677daf7b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
           </div>
         </div>
+      </a>
+        <a href="/listings">
         <div class="col">
           <div class="h-100">
             <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
           </div>
         </div>
+      </a>
+
+        <a href="/listings">
         <div class="col">
           <div class="h-100">
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
           </div>
         </div>
+      </a>
+        <a href="/listings">
         <div class="col">
           <div class="h-100">
             <img src="https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?q=80&w=1781&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
           </div>
         </div>
+        </a>
       </div>
     </div>
     <h2 class="mt-3 col-4 offset-1">Trending destinations</h2>
     <p class="col-4 offset-1">Most popular choices for travellers from India</p>
     <div class="row col-10 offset-1">
       <div class="row row-cols-1 row-cols-md-2 g-2">
-        <div class="col">
-          <div class="h-100">
-            <img src="https://images.unsplash.com/photo-1606402179428-a57976d71fa4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="h-100">
-            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
+          <a href="/listings">
+              <div class="col">
+                  <div  style="height: 400px; width:500px; overflow: hidden; ">
+                      <img src="https://images.unsplash.com/photo-1606402179428-a57976d71fa4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top h-100 w-100" style="object-fit: cover;" alt="...">
+                  </div>
+              </div>
+          </a>
+          <a href="/listings">
+              <div class="col">
+                  <div  style="height: 400px;width:500px;margin-left:50px ; overflow: hidden;">
+                      <img src="https://images.unsplash.com/photo-1455587734955-081b22074882?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aG90ZWx8ZW58MHx8MHx8fDA%3D" class="card-img-top h-100 w-100" style="object-fit: cover;" alt="...">
+                  </div>
+              </div>
+          </a>
       </div>
-    </div>
+  </div>
+  
     <h2 class="mt-3 col-4 offset-1">Quick and easy trip planner</h2>
     <p class="mt-3 col-4 offset-1">Pick a vibe and explore the top destinations in India</p>
     <div class="row col-10 offset-1">
       <div class="row row-cols-1 row-cols-md-3 g-2">
+
+        <a href="/listings">
         <div class="col">
           <div class="h-100">
             <img src="https://images.unsplash.com/photo-1519884534703-ce5da0b790b0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
             <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
+            
             </div>
           </div>
         </div>
+      </a>
+        <a href="/listings">
         <div class="col">
-          <div class="h-100">
+          <div class="h-100" >
             <img src="https://images.unsplash.com/photo-1510568668902-c879acf576b9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
             <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
+              
             </div>
           </div>
         </div>
+      </a>
+
+        <a href="/listings">
         <div class="col">
           <div class="h-100">
             <img src="https://images.unsplash.com/photo-1489933126150-18887342edea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
             <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
+             
             </div>
           </div>
         </div>
+        </a>
+        <a href="/listings">
         <div class="col">
           <div class="h-100">
             <img src="https://images.unsplash.com/photo-1609465373809-cef0346392b6?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
             <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
+             
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="h-100">
-            <img src="https://images.unsplash.com/photo-1572806100014-03625fce5a5f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
+      </a>
+     
+      <a href="/listings">
         <div class="col">
           <div class="h-100">
             <img src="https://images.unsplash.com/photo-1563841623392-020439626029?q=80&w=1786&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
             <div class="card-body">
-              <p class="card-text mt-3"><small class="text-muted">Last updated 3 mins ago</small></p>
+              
             </div>
           </div>
         </div>
+      </a>
+      <a href="/listings">
+        <div class="col">
+          <div class="h-100">
+            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWx8ZW58MHx8MHx8fDA%3D" class="card-img-top" alt="...">
+            <div class="card-body">
+              
+            </div>
+          </div>
+        </div>
+      </a>
+
+
       </div>
     </div>
-    <div class="row col-10 offset-1">
-      <img src="/img/footer1.png" alt="..." style="height: 300px; width: auto;">
-      <img src="/img/footer2.png" alt="..." style="height: 300px; width: auto;">
-      <img src="/img/footer3.png" alt="..." style="height: 200px; width: auto;">
-    </div>
-    
-
-    <footer>
-      <div class="f-info">
-        <div class="f-info-socials">
-          <i class="fa-brands fa-square-facebook"></i>
-          <i class="fa-brands fa-square-instagram"></i>
-          <i class="fa-brands fa-linkedin"></i>
-        </div>
-        <div class="f-info-brand">&copy;RENT CONNECT Private Limited</div>
-        <div class="f-info-links">
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
-        </div>
+  
+     <footer>
+      <div class="footer-outer">
+          <div class="footer-inner">
+  
+            <div class="footer-left">
+              <!-- <div class="footer-logo">
+                <img src="images\flower.jpg" alt="logo">
+                <h2>Home Away</h2>
+              </div>  -->
+              <div class="logo1" style="width: 40px;">
+              <div class="rotate1">
+                <i class="fa-regular fa-compass "></i>
+              </div>
+              
+            </div>
+              <h3>"Discover Your Perfect Getaway"</h3>
+              <div class="footer-icons">
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                  </svg> 
+                </a>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                  </svg>
+                </a>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="2vw" height="2vw" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+              </a>
+              </div>
+            </div>
+  
+            <div class="footer-right">
+              <div class="opt-1 opt-Margin">
+                <h3>Solutions</h3>
+                <a href="#">Marketing</a>
+                <a href="#">Analystics</a>
+                <a href="#">Commerce</a>
+                <a href="#">Insight</a>
+              </div>
+  
+              <div class="opt-2 opt-Margin">
+                <h3>Support</h3>
+                <a href="#">Pricing</a>
+                <a href="#">Documentation</a>
+                <a href="#">Guides</a>
+                <a href="#">API Status</a>
+              </div>
+  
+              <div class="opt-3 opt-Margin">
+                <h3>Company</h3>
+                <a href="#">About</a>
+                <a href="#">Blog</a>
+                <a href="#">Jobs</a>
+                <a href="#">Press</a>
+                <a href="#">Partners</a>
+              </div>
+  
+              <div class="opt-3 opt-Margin">
+                <h3>Legal</h3>
+                <a href="#">Claim</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+              </div>
+  
+            </div>
+          </div>
+      </div>
+ 
+      <hr>
+      <div class="copyright">
+        <h4>&#169;2024 Your Company, Inc. All rights reserved.</h4>
       </div>
     </footer>
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>

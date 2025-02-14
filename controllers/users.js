@@ -20,7 +20,9 @@ module.exports.signup=async(req, res) => {
         
     }catch(err){
         req.flash('error',err.message);
-        res.redirect( "/login" );
+        // res.redirect( "/signup" );
+        // // res.render('users/login.ejs');
+        res.render('users/login', { messages: req.flash('error') });
     }
 }
 module.exports.renderLoginForm=(req,res)=>{

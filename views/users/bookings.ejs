@@ -1,0 +1,42 @@
+<%- layout('layouts/boilerplate') %>
+
+<div class="container">
+    <h1>Your Bookings</h1>
+    <% if (bookings.length > 0) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Hotel</th>
+                    <th>Check-In</th>
+                    <th>Check-Out</th>
+                    <th>Total Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% bookings.forEach(booking => { %>
+                    <tr>
+                        <!-- Handle case when booking.listing might be null -->
+                        <td>
+                            <% if (booking.listing) { %>
+                                <%= booking.listing.title %>
+                            <% } else { %>
+                                <span class="text-danger">Listing Not Available</span>
+                            <% } %>
+                        </td>
+                        <td><%= booking.checkIn.toDateString() %></td>
+                        <td><%= booking.checkOut.toDateString() %></td>
+                        <td>&#8377;<%= booking.totalPrice.toLocaleString() %></td>
+                        <td>
+                            <form action="/bookings/<%= booking._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-danger">Cancel</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No bookings exist.</p>
+    <% } %>
+</div>

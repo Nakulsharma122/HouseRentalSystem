@@ -1,4 +1,9 @@
 <%- layout('layouts/boilerplate') %>
+<script>
+ const mapToken ="<%=process.env.MAP_TOKEN %>";
+ const listing = <%-JSON.stringify(listing) %>; 
+</script>
+
 
 <div class="row mt-3">
   <!-- Listing Details -->
@@ -12,7 +17,7 @@
         <p class="card-text">Owned By <br>  
           <b><i><%= listing.owner.username %></i></b>
         </p>
-        <p class="card-text"><%= listing.description %></p>
+        <p class="card-text"><%- listing.description %></p>
         <p class="card-text">&#8377; <%= listing.price.toLocaleString() %></p>
         <p class="card-text"><%= listing.location %></p>
         <p class="card-text"><%= listing.country %></p>
@@ -30,14 +35,25 @@
     </form>
   </div>
 
-  <% } %>
-  
+    <!-- Display Total Bookings and Booking Details -->
+    <h3 class="col-8 offset-3">Total Bookings: <%= totalBookings %></h3>
+    <ul class="col-8 offset-3">
+      <% bookings.forEach(booking => { %>
+        <li>Booking from <%= booking.checkIn.toISOString().split('T')[0] %> to <%= booking.checkOut.toISOString().split('T')[0] %> by <%= booking.user.username %></li>
+      <% }) %>
+    </ul>
 
+    <% } %>
+
+
+  
+  <a href="/listings/<%= listing._id %>/book" class="btn btn-primary col-4 offset-4">Book</a>
+  
   <!-- Reviews Section -->
   <div class="col-8 offset-3 mb-3 ">
-    <hr>
+    <!-- <hr class="w-100 w-md-75 w-lg-50" > -->
     <% if(currentUser) {%>
-    <h4>Reviews:</h4>
+    <h4 style="margin-top: 5vw;">Reviews:</h4>
     <form action="/listings/<%= listing.id %>/reviews" method="POST" novalidate class="needs-validation">
       <div class="mb-3 mt-3">
         <fieldset class="starability-slot">
@@ -62,12 +78,12 @@
           Please  enter a valid comment for the review.
         </div>
       </div>
-      <button class="btn btn-outline-dark">Submit Review</button>
+      <button class="btn btn-outline-dark mb-5">Submit Review</button>
     </form>
     <% } %>
 
     <% if(listing.reviews.length>0){ %>
-      <hr class="mt-4">
+      <!-- <hr style="width: 50vw;"> -->
     <div class="row">
       <p><b>All Review</b></p>
       <% for(review of listing.reviews){ %>
@@ -85,6 +101,12 @@
     </div>
     <% } %>
   </div> 
-
+  <div class="col-6 offset-3 mb-3">
+  <h3>Where you'll be</h3>
+  <div id="map"></div>
+  </div>
 </div>
 
+
+
+<script src="/js/map.js"></script>

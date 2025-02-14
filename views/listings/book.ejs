@@ -1,0 +1,102 @@
+<%- layout('layouts/boilerplate') %>
+
+<div class="container col-6 offset-3">
+    <h1>Book <%= listing.title %></h1>
+    <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="Listing_image" style="">
+    <p>Price: &#8377; <%= listing.price.toLocaleString() %> per day</p>
+    <form action="/listings/<%= listing._id %>/book" method="POST">
+        <div class="form-group mb-3">
+            <label for="checkIn">Check-In Date</label>
+            <input type="date" id="checkIn" name="checkIn" class="form-control" required>
+        </div>
+        <div class="form-group mb-3 ">
+            <label for="checkOut">Check-Out Date</label>
+            <input type="date" id="checkOut" name="checkOut" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Book Now</button>
+    </form>
+</div>
+
+<script>
+    const bookedDates = <%- JSON.stringify(bookedDates) %>;
+
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     const checkInInput = document.getElementById('checkIn');
+    //     const checkOutInput = document.getElementById('checkOut');
+
+    //     function isDateBooked(date) {
+    //         return bookedDates.some(booking => {
+    //             const checkIn = new Date(booking.checkIn);
+    //             const checkOut = new Date(booking.checkOut);
+    //             return date >= checkIn && date <= checkOut;
+    //         });
+    //     }
+  
+    //Updated
+    document.addEventListener('DOMContentLoaded', () => {
+        const today = new Date().toISOString().split('T')[0];
+        const checkInInput = document.getElementById('checkIn');
+        const checkOutInput = document.getElementById('checkOut');
+
+        checkInInput.setAttribute('min', today);
+        checkOutInput.setAttribute('min', today);
+
+        function isDateBooked(date) {
+            return bookedDates.some(booking => {
+                const checkIn = new Date(booking.checkIn);
+                const checkOut = new Date(booking.checkOut);
+                return date >= checkIn && date <= checkOut;
+            });
+        }
+
+        function updateDateInput(input) {
+            const date = new Date(input.value);
+            const isBooked = isDateBooked(date);
+
+            if (isBooked) {
+                input.classList.add('booked');
+                input.classList.remove('available');
+            } else {
+                input.classList.add('available');
+                input.classList.remove('booked');
+            }
+        }
+
+        checkInInput.addEventListener('change', () => {
+            updateDateInput(checkInInput);
+            const checkInDate = new Date(checkInInput.value);
+            checkOutInput.setAttribute('min', checkInInput.value);
+            checkOutInput.value = '';
+        });
+
+        checkOutInput.addEventListener('change', () => {
+            updateDateInput(checkOutInput);
+            const checkInDate = new Date(checkInInput.value);
+            const checkOutDate = new Date(checkOutInput.value);
+
+            if (checkOutDate <= checkInDate) {
+                alert('Check-Out date must be after Check-In date');
+                checkOutInput.value = '';
+            }
+        });
+
+        // Initially update the date inputs if they have values
+        if (checkInInput.value) {
+            updateDateInput(checkInInput);
+        }
+        if (checkOutInput.value) {
+            updateDateInput(checkOutInput);
+        }
+    });
+</script>
+
+<style>
+    .booked {
+        background-color: red !important;
+    }
+    .available {
+        background-color: green !important;
+    }
+</style>
+
+
