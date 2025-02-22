@@ -18,25 +18,3 @@
         }, false)
       })
   })()
-
-
-  // public/js/script.js
-document.addEventListener('DOMContentLoaded', () => {
-  const checkInInput = document.getElementById('checkIn');
-  const checkOutInput = document.getElementById('checkOut');
-
-  checkInInput.addEventListener('change', () => {
-      const checkInDate = new Date(checkInInput.value);
-      checkOutInput.setAttribute('min', checkInInput.value);
-      checkOutInput.value = '';
-  });
-
-  checkOutInput.addEventListener('change', () => {
-      const checkInDate = new Date(checkInInput.value);
-      const checkOutDate = new Date(checkOutInput.value);
-      if (checkOutDate <= checkInDate) {
-          alert('Check-Out date must be after Check-In date');
-          checkOutInput.value = '';
-      }
-  });
-});
