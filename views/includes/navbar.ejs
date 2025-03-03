@@ -29,7 +29,7 @@
         </div>
       </a>
     
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"></button>
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -53,17 +53,13 @@
 
           <a href="/bookings" class="btn btn-primary mx-3">Your Bookings</a>
 
-          <% if(!currentUser){ %>
-
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end ms-auto">
-              <!-- <a href="/signup"><button class="btn btn-outline-success" type="button">Sign Up</button></a> -->
-              <a href="/login"><button class="btn btn-outline-success" type="button">Log In</button></a>  
-            </div>
-          <% } %>
-
-          <% if(currentUser){ %>
+          <% if (typeof currentUser !== "undefined" && currentUser) { %>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end ms-auto">
               <a href="/logout"><button class="btn btn-outline-danger" type="button">Log Out</button></a>
+            </div>
+          <% } else { %>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end ms-auto">
+              <a href="/login"><button class="btn btn-outline-success" type="button">Log In</button></a>  
             </div>
           <% } %>
 
