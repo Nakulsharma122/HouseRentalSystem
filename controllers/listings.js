@@ -134,6 +134,6 @@ module.exports.searchListings = async (req, res) => {
     } catch (err) {
         console.error("Error searching listings:", err);
         req.flash("error", "Error searching listings");
-        res.redirect("/listings");
+       return  res.redirect("/listings");
     }
 };
