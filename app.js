@@ -22,7 +22,8 @@ const userRouter = require('./routes/user.js');
 const userRoutes1 = require('./routes/userRoute.js');
 
 // MongoDB URL
-const dburl = "mongodb://127.0.0.1:27017/wanderlust";
+const dburl = process.env.ATLASDB_URL;
+
 
 main()
   .then(() => {
@@ -32,9 +33,18 @@ main()
     console.log(err);
   });
 
-async function main() {
-  await mongoose.connect(dburl);
-}
+  async function main() {
+    try {
+      await mongoose.connect(dburl, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      });
+      console.log("Connected to MongoDB Atlas");
+    } catch (error) {
+      console.error("DB Connection Error:", error);
+    }
+  }
+  
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -45,10 +55,8 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 // MongoStore setup
 const store = MongoStore.create({
-  mongoUrl: dburl,
-  crypto: {
-    secret: process.env.SECRET,
-  },
+  mongoUrl: process.env.ATLASDB_URL,
+  crypto: { secret: process.env.SECRET },
   touchAfter: 24 * 3600,
 });
 
